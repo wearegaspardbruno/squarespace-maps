@@ -39,7 +39,6 @@
         crossDomain: true,
         dataType: 'html',
         success: function(data) {
-
           $($element).after('<div class="debug"></div>');
           var div = $('.debug');
           div.hide();

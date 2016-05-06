@@ -19,7 +19,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/vascogaspar/bootstrap-extra-modal.git"
+    "url": "https://github.com/vascogaspar/squarespace-maps.git"
   },
   "keywords": [
     "jQuery",
@@ -30,7 +30,7 @@
   "author": "Vasco Gaspar",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/vascogaspar/bootstrap-extra-modal/issues"
+    "url": "https://github.com/vascogaspar/squarespace-maps/issues"
   },
   "homepage": "https://vasco.work"
 }
