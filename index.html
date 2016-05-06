@@ -1,0 +1,47 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>BS Extra Modal</title>
+
+  <!-- Don't forget to load jQuery! -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js" type="text/javascript"></script>
+
+  <!-- Load plugin file -->
+  <script src="dist/js/squarespace-map.min.js" type="text/javascript"></script>
+
+  <style media="screen">
+    #map {
+      height: 400px;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <div id="map"></div>
+
+  <!--
+    Load Google maps api files and replace "___YOUR_API_KEY___" with your own key.
+    More information at https://developers.google.com/maps/documentation/javascript/get-api-key
+  -->
+
+  <script src="https://maps.googleapis.com/maps/api/js?key=___YOUR_API_KEY___&callback=initMap&libraries=geometry,places" async defer></script>
+
+
+
+  <!-- Initialize the plugin -->
+
+  <script type="text/javascript">
+    var initMap = function() {
+      $('#map').squarespaceMap({
+        storesURL: '/stores.html',
+        squarespaceContainer: '#main1'
+      });
+    }
+  </script>
+</body>
+</html>
