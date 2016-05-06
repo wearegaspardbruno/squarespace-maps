@@ -24,14 +24,14 @@ $('#yourDivSelector').squarespaceMap();
 ```
 
 ## Options
-| Name                 | Type           | Default    | Description  |   
+<!-- | Name                 | Type           | Default    | Description  |   
 |:----------------------|:----------------|:------------|:--------------|
 | position	   		  	| string	   		| 'default'  | Position of the modal (can be 'default', 'right', 'left') |
 | pushContent	  	   		| boolean			| false      | Option used to move the boby depending on 'position'|
 | openAnimation      	| string      	| 'jelly'    | This will add a css class containing an animation|
 | closeAnimation			| string			| 'unjelly'  | This will add a css class containing an animation|
 | reload					| boolean			| false      | Reload page when closing the modal |
-| css						| string			| ''         | Custom css class to be added to the modal container|
+| css						| string			| ''         | Custom css class to be added to the modal container| -->
 
 ## Run:
 ```shell
