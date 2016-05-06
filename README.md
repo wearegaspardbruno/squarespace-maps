@@ -34,10 +34,11 @@ $('#yourDivSelector').squarespaceMap();
 | css						| string			| ''         | Custom css class to be added to the modal container| -->
 
 ## Run:
+Clone this repo then:
 ```shell
 npm install
 ```
-Then:
+and
 
 ```shell
 grunt watch
