@@ -1,6 +1,5 @@
 # Squarespace store locator
 
-Description for this plugin/hack...
 
 ## Dependencies
 * [jQuery](http://jquery.com)
@@ -10,7 +9,7 @@ Description for this plugin/hack...
 ### Pre-Setup
 1. Create a event list page and make sure it is not linked (for this example, the url slug will be '/stores')
 2. Create an event for each location you want to show on the map
-3. Make sure you put the address of the event on the **Location** tab *insert screenshot of location tab*
+3. Make sure you put the address of the event on the **Location** tab 
 4. On the page you want the map to appear, add a new component type **Code** and add the following markup: `<div id="yourDivSelector"></div>`
 
 
