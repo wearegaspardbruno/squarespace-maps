@@ -6,7 +6,8 @@
       zoom: 15,
       squarespaceContainer: '#main',
       locatedMessage: 'You are here',
-      styles: []
+      styles: [],
+      markerIcon: ''
   	}, options);
 
     var $element = $(this),
@@ -66,17 +67,13 @@
 
             // Convert address to coordinates
             $.getJSON('https://maps.googleapis.com/maps/api/geocode/json?address='+match[0]+'&sensor=false', null, function(data) {
-              console.log(data);
               var p = data.results[0].geometry.location;
               var latlng = new google.maps.LatLng(p.lat, p.lng);
-
-
-              var icon = 'https://i.imgur.com/igfuySX.png';
 
               var marker = new google.maps.Marker({
                 position: latlng,
                 map: map,
-                icon: icon
+                icon: defaults.markerIcon
               });
 
               marker.info = new google.maps.InfoWindow({

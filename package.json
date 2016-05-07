@@ -10,16 +10,13 @@
     "grunt-contrib-watch": "^0.6.1"
   },
   "description": "",
-  "main": "dist/js/bootstrap-extra-modal.js",
+  "main": "dist/js/squarespace-map.js",
   "dependencies": {
     "jquery": "^2.1.4"
   },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "repository": {
     "type": "git",
-    "url": "https://github.com/vascogaspar/squarespace-maps.git"
+    "url": "https://github.com/wearegaspardbruno/squarespace-maps"
   },
   "keywords": [
     "jQuery",
@@ -29,8 +26,5 @@
   ],
   "author": "Vasco Gaspar",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/vascogaspar/squarespace-maps/issues"
-  },
   "homepage": "https://vasco.work"
 }
