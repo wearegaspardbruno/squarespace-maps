@@ -7,8 +7,7 @@
   <title>BS Extra Modal</title>
 
   <!-- Don't forget to load jQuery! -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js" type="text/javascript"></script>
-
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
   <!-- Load plugin file -->
   <script src="dist/js/squarespace-map.min.js" type="text/javascript"></script>
 
@@ -31,16 +30,16 @@
 
   <script src="https://maps.googleapis.com/maps/api/js?key=___YOUR_API_KEY___&callback=initMap&libraries=geometry,places" async defer></script>
 
-
-
   <!-- Initialize the plugin -->
 
   <script type="text/javascript">
     var initMap = function() {
-      $('#map').squarespaceMap({
-        storesURL: '/stores.html',
-        squarespaceContainer: '#main1'
-      });
+      $(function() {
+        $('#map').squarespaceMap({
+          storesURL: '/stores.html',
+          squarespaceContainer: '#main1'
+        });
+      })
     }
   </script>
 </body>

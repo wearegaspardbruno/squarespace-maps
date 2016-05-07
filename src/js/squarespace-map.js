@@ -5,7 +5,8 @@
       storeSelector: '.eventlist-meta-address-maplink',
       zoom: 15,
       squarespaceContainer: '#main',
-      locatedMessage: 'You are here'
+      locatedMessage: 'You are here',
+      styles: []
   	}, options);
 
     var $element = $(this),
@@ -19,20 +20,29 @@
 
     var init = function() {
 
-      // Stop plugin initialization if element does not esxist on page
+      // Stop plugin initialization if element does not exist on page
       if ($element.length === 0) {
         return;
       }
 
+      // Configure map options
+      var mapOptions = {
+        zoom: defaults.zoom,
+        mapTypeControlOptions: {
+          mapTypeIds: [google.maps.MapTypeId.ROADMAP, 'map_style']
+        }
+      };
+
+      var styledMap = new google.maps.StyledMapType(defaults.styles, {name: "Styled Map"});
+
       map = new google.maps.Map(document.getElementById($element.attr('id')), mapOptions);
+
+      //Associate the styled map with the MapTypeId and set it to display.
+      map.mapTypes.set('map_style', styledMap);
+      map.setMapTypeId('map_style');
 
       // Add places search input to map
       addSearchInput();
-
-      // Configure map options
-      var mapOptions = {
-        zoom: defaults.zoom
-      };
 
       $.ajax({
         url: defaults.storesURL,
@@ -40,11 +50,9 @@
         dataType: 'html',
         success: function(data) {
           $($element).after('<div class="debug"></div>');
-          var div = $('.debug');
-          div.hide();
-
+          $('.debug').hide();
           // Filter html by container
-          div.html($(data).filter(defaults.squarespaceContainer).html());
+          $('.debug').html($(data).find(defaults.squarespaceContainer).html());
           var storesLocation = $('.debug .eventlist-meta-address-maplink');
 
           // Hack for detecting asynchronous fetch end
@@ -58,11 +66,17 @@
 
             // Convert address to coordinates
             $.getJSON('https://maps.googleapis.com/maps/api/geocode/json?address='+match[0]+'&sensor=false', null, function(data) {
+              console.log(data);
               var p = data.results[0].geometry.location;
               var latlng = new google.maps.LatLng(p.lat, p.lng);
+
+
+              var icon = 'https://i.imgur.com/igfuySX.png';
+
               var marker = new google.maps.Marker({
                 position: latlng,
-                map: map
+                map: map,
+                icon: icon
               });
 
               marker.info = new google.maps.InfoWindow({
